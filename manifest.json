@@ -1,7 +1,7 @@
 {
   "name": "Inbox Zero",
   "version": "1.0",
-  "description": "A more fun inbox zero page",
+  "description": "A happier Inbox Zero page",
   "content_scripts": [
     {
       "js": ["content.js"],
@@ -26,5 +26,11 @@
     "images/038-crab.svg",
     "images/044-wave.svg"
   ],
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
   "manifest_version": 2
 }
