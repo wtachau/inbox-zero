@@ -14,7 +14,7 @@ const images = [
   "images/034-snorkel.svg",
   "images/037-pineapple.svg",
   "images/038-crab.svg",
-  "images/044-wave.svg"
+  "images/044-wave.svg",
 ];
 
 const randomImage = () => {
@@ -28,7 +28,7 @@ const SELECTOR =
 /* Create and style components */
 var zeroImage = document.createElement("img");
 zeroImage.id = zeroImageId;
-zeroImage.src = chrome.extension.getURL(randomImage());
+zeroImage.src = chrome.runtime.getURL(randomImage());
 zeroImage.style.textAlign = "center";
 zeroImage.style.border = "50px solid white";
 zeroImage.style.borderRadius = "175px";
@@ -67,4 +67,7 @@ const removePanel = () => {
   }
 };
 
-document.addEventListener("DOMNodeInserted", removePanel);
+new MutationObserver(removePanel).observe(document, {
+  childList: true,
+  subtree: true,
+});
